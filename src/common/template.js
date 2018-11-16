@@ -16,7 +16,7 @@ class Template extends Component {
 
     render() {
         return (
-            <Layout>
+            <Layout style={{height:'100%'}}>
                 <HeaderComponent/>
                 <Layout style={{paddingTop: '64px'}}>
                     <Aside/>
@@ -30,11 +30,14 @@ class Template extends Component {
                         <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 780 }}>
                             {this.props.children}
                         </Content>
+                        <Footer style={{ textAlign: 'center', padding: 0, marginTop: 30 }}>
+                            Ant Design ©2018 Created by Ant UED
+                        </Footer>
                     </Layout>
                 </Layout>
-                <Footer style={{ textAlign: 'center' }}>
-                    Ant Design ©2018 Created by Ant UED
-                </Footer>
+                {/*<Footer style={{ textAlign: 'center' }}>*/}
+                    {/*Ant Design ©2018 Created by Ant UED*/}
+                {/*</Footer>*/}
             </Layout>
         )
     }

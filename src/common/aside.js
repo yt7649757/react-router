@@ -15,7 +15,8 @@ class Aside extends Component {
             openKeys: [''],
             selectedKeys: [''],
             rootSubmenuKeys: groupKey,
-            itemName: ''
+            itemName: '',
+            collapsed: false
         }
     }
 
@@ -65,6 +66,13 @@ class Aside extends Component {
     };
 
 
+    onCollapse = () => {
+        this.setState({
+            collapsed: !this.state.collapsed
+        })
+    }
+
+
     render() {
 
         const { openKeys, selectedKeys } = this.state;
@@ -98,8 +106,8 @@ class Aside extends Component {
                 <Sider
                     collapsible
                     breakpoint="lg"
-                    collapsed={collapsed}
-                    onCollapse={onCollapse}
+                    collapsed={this.state.collapsed}
+                    onCollapse={this.onCollapse}
                     trigger={collapsed}>
                     <Menu
                         subMenuOpenDelay={0.3}
